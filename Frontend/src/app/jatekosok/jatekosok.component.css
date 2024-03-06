@@ -1,0 +1,9 @@
+app-tippek{
+
+    max-height: 30vh;
+    width:95%;
+    background-color: #f4f4f4;
+    display: inline-block;
+    border-top-left-radius: 20px;
+
+}

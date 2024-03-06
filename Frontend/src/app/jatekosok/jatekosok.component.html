@@ -1,0 +1,10 @@
+<div *ngFor="let jatekos of jatekosok">
+    <div class="row">
+        <div class="col display-4">
+            {{jatekos.name}}
+            <button (click)="jatekos.tippek = !jatekos.tippek" type="button" class="btn btn-primary btn-sm">Tippek</button>
+        </div>
+    </div>
+    <app-tippek class="p-3 overflow-auto" *ngIf="jatekos.tippek" [tippek]="jatekos.tipps"></app-tippek>
+    
+</div>
