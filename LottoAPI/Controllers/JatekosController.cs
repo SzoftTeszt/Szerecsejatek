@@ -29,7 +29,7 @@ namespace LottoAPI.Controllers
           {
               return NotFound();
           }
-            return await _context.Jatekos.ToListAsync();
+            return await _context.Jatekos.Include(x=>x.Tipps).ToListAsync();
         }
 
         // GET: api/Jatekos/5
@@ -40,7 +40,7 @@ namespace LottoAPI.Controllers
           {
               return NotFound();
           }
-            var jatekos = await _context.Jatekos.FindAsync(id);
+            var jatekos = await _context.Jatekos.Where(x=>x.Id==id).Include(x=>x.Tipps).FirstOrDefaultAsync();
 
             if (jatekos == null)
             {
